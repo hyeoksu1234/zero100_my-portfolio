@@ -73,11 +73,15 @@
       }
       @media (max-width: 768px) {
         .strengths-container {
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: 1fr; /* 한 줄로 변경 */
         }
         .container {
-          margin: 20px auto; /* 모바일 화면에서는 마진을 조금 줄임 */
-          padding: 20px; /* 패딩도 조금 줄여 내용이 더 잘 보이게 함 */
+          margin: 20px auto;
+          padding: 20px;
+          max-width: 90%; /* 컨테이너 너비를 화면의 90%로 설정 */
+        }
+        .strength-card {
+          margin-bottom: 20px; /* 카드 사이의 간격 추가 */
         }
       }
       .subtitle {
