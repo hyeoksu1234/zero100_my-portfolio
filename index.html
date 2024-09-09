@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to zero100 [zeto] 이로운_이혁수</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 800px;
+        text-align: center;
+        margin: 30px auto; /* 위아래 마진을 30px로 설정하고 좌우는 자동으로 중앙 정렬 */
+      }
+      h1 {
+        color: #ff8c00;
+      }
+      p {
+        margin-bottom: 20px;
+      }
+      .btn {
+        background-color: #ff8c00;
+        color: #000000;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      .btn:hover {
+        background-color: #e67300; /* 호버 시 더 어두운 색상 */
+      }
+      #strengths {
+        display: none;
+      }
+      .strengths-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .strength-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        color: black;
+        text-align: left; /* 내용을 왼쪽 정렬 */
+      }
+      .strength-card h3 {
+        text-align: center; /* 제목은 중앙 정렬 유지 */
+      }
+      .strength-card ul {
+        text-align: left;
+        padding-left: 20px; /* 목록의 왼쪽 여백 추가 */
+      }
+      .back-btn {
+        background-color: #000000;
+        color: #ff8c00;
+        margin-top: 20px;
+      }
+      @media (max-width: 768px) {
+        .strengths-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .container {
+          margin: 20px auto; /* 모바일 화면에서는 마진을 조금 줄임 */
+          padding: 20px; /* 패딩도 조금 줄여 내용이 더 잘 보이게 함 */
+        }
+      }
+      .subtitle {
+        font-size: 0.9em;
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="home">
+      <h1>Welcome to zero100</h1>
+      <h2>[zeto] 이로운_이혁수</h2>
+      <p>
+        안녕하세요! 저는 열정적인 디자이너이자 개발자이고 창의적인 문제의
+        해결사입니다. 새로운 기술을 배우고 혁신적인 솔루션을 만드는 것을
+        좋아합니다. 팀워크를 중요하게 생각하며, 함께 성장하는 것을 목표로
+        합니다.
+      </p>
+      <br />
+      <p class="subtitle">제 강점 테마를 통해 더 자세히 알아보세요.</p>
+      <button class="btn" onclick="showStrengths()">View My Strengths</button>
+    </div>
+
+    <div class="container" id="strengths">
+      <h1>zero100 [zeto] 이로운_이혁수</h1>
+      <div class="strengths-container">
+        <div class="strength-card" style="background-color: #e6e6fa">
+          <h3>1. 사교성 테마 (Woo)</h3>
+          <ul>
+            <li>
+              <strong>에너지</strong>를 얻는 곳: 새로운 사람들과의
+              <strong>교류</strong>
+            </li>
+            <li>그룹에서의 <strong>역할</strong> 수행에 기쁨을 느낌</li>
+            <li>
+              외부 사람들과의 <strong>토론</strong>과 접점을 자연스럽게 시작
+            </li>
+            <li>인정과 <strong>칭찬</strong>을 즐김</li>
+            <li>새로운 사람과의 대화에서 만족감</li>
+          </ul>
+        </div>
+        <div class="strength-card" style="background-color: #e0fff0">
+          <h3>2. 성취 테마 (Achiever)</h3>
+          <ul>
+            <li><strong>목표</strong> 달성을 위해 지속적으로 노력</li>
+            <li>현실적이고 감정을 배제한 시각 제공</li>
+            <li>근면하게 일하고, 지식 습득에 <strong>몰두</strong></li>
+            <li>미래를 상상하고 <strong>비전</strong>을 제시</li>
+          </ul>
+        </div>
+        <div class="strength-card" style="background-color: #ffe4e1">
+          <h3>3. 미래지향 테마 (Futuristic)</h3>
+          <ul>
+            <li>
+              <strong>미래</strong>의 변화와 <strong>가능성</strong>에 대해 깊이
+              생각
+            </li>
+            <li>
+              창의적 <strong>아이디어</strong>와 <strong>혁신</strong>적 사고로
+              팀에 기여
+            </li>
+            <li>장기적인 개선을 위한 <strong>고찰</strong></li>
+          </ul>
+        </div>
+        <div class="strength-card" style="background-color: #fffacd">
+          <h3>4. 커뮤니케이션 테마 (Communication)</h3>
+          <ul>
+            <li>
+              쉽게 <strong>대화</strong> 시작, <strong>아이디어</strong>를
+              표현하는 데 능숙
+            </li>
+            <li>활기찬 <strong>토론</strong>으로 사고 자극</li>
+            <li>논점을 명확하게 전달, 사람들에게 영감을 줌</li>
+          </ul>
+        </div>
+        <div class="strength-card" style="background-color: #fff0f5">
+          <h3>5. 정리 테마 (Arranger)</h3>
+          <ul>
+            <li>
+              <strong>목표</strong> 달성에 지속적으로 기여, 효율적 자원 배분
+            </li>
+            <li>
+              팀을 위한 최적의 <strong>계획</strong>과 <strong>조정</strong>
+            </li>
+            <li>일이 틀어져도 재평가와 재조정으로 활력을 얻음</li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn back-btn" onclick="showHome()">Back to Home</button>
+    </div>
+
+    <script>
+      function showStrengths() {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("strengths").style.display = "block";
+      }
+
+      function showHome() {
+        document.getElementById("strengths").style.display = "none";
+        document.getElementById("home").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
