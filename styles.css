@@ -546,9 +546,9 @@ ul li a.clickable:hover {
     /* Other mobile-specific styles */
   }
   #strengths {
-    grid-column: span 4;
-    width: calc(100% - 1rem);
-    margin: 0 0.5rem;
+    grid-column: span 8;
+    /* width: calc(100% - 1rem); */
+    /* margin: 0 0.5rem; */
     padding: 1rem;
   }
 
