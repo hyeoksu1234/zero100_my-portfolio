@@ -244,7 +244,74 @@ h2 {
   line-height: 1.6;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
+  .wrapper {
+    display: flex;
+  }
+  .wrapper ul li {
+    display: flex;
+    text-align: center;
+    list-style: none;
+    font-size: 10vw;
+    /* display: table; */
+    margin-bottom: 10px;
+    align-items: center;
+    /* justify-content: center; */
+  }
+  .wrapper ul li a.clickable {
+    color: orange;
+    text-decoration: none;
+    letter-spacing: 5px;
+    text-transform: lowercase;
+    transition: 0.5s ease;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    /* align-items: center; */
+  }
+  ul li a.clickable:hover {
+    letter-spacing: 0px;
+  }
+  #home {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+  /* Other mobile-specific styles */
+  #hero {
+    grid-column: span 8;
+    height: 100%;
+    /* Other mobile-specific styles */
+  }
+
+  .studio-name {
+    margin-top: 3px;
+    font-size: 1.3em;
+    font-weight: bold;
+    /* align-self: flex-start; 가로 정렬 */
+  }
+  .hamburger {
+    margin-top: 2px;
+    height: 24px;
+    width: 20px;
+  }
+  .hamburger.open {
+    height: 24px;
+    width: 20px;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(9px) rotate(135deg);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-135deg);
+  }
+  .menu {
+    width: 50%;
+  }
   .strength-section {
     grid-column: span 8;
   }
