@@ -1,0 +1,572 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900");
+body {
+  background: #000;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+body * {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  overflow-y: scroll;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  height: 100%;
+  gap: 0.7rem;
+  padding: 0.5rem;
+}
+
+section {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+/* Custom sizes for different cards */
+#home {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+li.cursor-hover:active {
+  color: orange;
+}
+
+#hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem; /* 좌우 패딩 추가 */
+  grid-column: span 4;
+  height: 100%;
+}
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 20px; /* 오른쪽 마진 추가 */
+}
+
+.studio-name {
+  font-size: 3vw;
+  font-weight: bold;
+  /* align-self: flex-start; 가로 정렬 */
+}
+.studio-name .su {
+  color: rgba(255, 255, 255, 0.4); /* 색상 밝기를 조정 */
+}
+.su-link {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: inherit; /* 현재 텍스트의 색상을 그대로 사용 */
+  cursor: pointer; /* 마우스 오버 시 포인터 커서로 변경 */
+  /* 필요한 경우 다른 스타일 규칙 추가 */
+}
+
+.hamburger {
+  /* margin-top: 10px; */
+  position: fixed; /* 위치 고정 */
+  z-index: 100;
+  cursor: pointer;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30px;
+  width: 30px;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  align-items: center;
+}
+.hamburger.open {
+  position: fixed; /* 수정: .open 클래스가 적용되면 position 값을 fixed로 변경 */
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 30px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(12px) rotate(135deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-12px) rotate(-135deg);
+}
+
+.menu {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 25%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  transition: right 0.5s;
+  padding-top: 100px;
+}
+
+.menu.open {
+  right: 0;
+}
+
+.menu.open ~ .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.5s ease;
+  z-index: 98; /* 메뉴보다 낮은 z-index 값을 설정하여 메뉴 위에 위치 */
+}
+
+.menu.open ~ .overlay.active {
+  background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 색상 */
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu ul li {
+  margin-bottom: 20px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+
+#my_photo {
+  grid-column: span 2;
+  height: 420px;
+  /* position: relative; */
+  width: 100%;
+  /* height: 100%; */
+  overflow: hidden; /* 이미지가 섹션 밖으로 넘치지 않게 함 */
+}
+
+#my_photo_2 {
+  grid-column: span 4;
+  height: 100%;
+  /* position: relative; */
+  width: 100%;
+  /* height: 100%; */
+  overflow: hidden; /* 이미지가 섹션 밖으로 넘치지 않게 함 */
+}
+#my_photo:hover .photo {
+  transform: scale(1.2); /* 우스 호버시 이미지를 1.1배로 확대 */
+}
+.photo {
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  transition: transform 0.3s;
+}
+#my_photo_2:hover .projects_photo {
+  transform: scale(1.2); /* 마우스 호버시 이미지를 1.1배로 확대 */
+}
+.projects_photo {
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  border-radius: 30px;
+  width: 100%;
+  height: 400px;
+  object-position: center;
+  transition: transform 0.3s;
+}
+
+#about {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+#about .about-content_1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%; /* 필요에 따라 조절 */
+}
+
+#contact .about-content_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%; /* 필요에 따라 조절 */
+}
+
+.name {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.info {
+  margin-top: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.occupation {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #555;
+}
+
+.personal-info {
+  margin-top: 10px;
+  font-size: 20 px;
+  color: #555;
+}
+
+#skills {
+  grid-column: span 2;
+  grid-row: span 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
+  height: 100%; /* 필요에 따라 조절 */
+  /* align-items: flex-start; */
+}
+
+.skills-graph {
+  display: flex;
+  width: 100%;
+  /* flex-direction: column; */
+  /* align-items: flex-start; */
+  flex-wrap: wrap;
+}
+
+.skill {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.skill-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background-color: lightgray;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.skill-level {
+  height: 100%;
+}
+
+.skill-level-100 {
+  width: 100%;
+  background-color: orange;
+}
+
+.skill-level-90 {
+  width: 90%;
+  background-color: orange;
+}
+
+.skill-level-80 {
+  width: 80%;
+  background-color: orange;
+}
+
+.skill-level-70 {
+  width: 70%;
+  background-color: orange;
+}
+
+#my_photo_2 {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+#contact {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.wrapper {
+  font-family: "Montserrat", sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper ul {
+  margin: 0;
+  padding: 0;
+  /* width: 65vw; */
+}
+.wrapper ul li {
+  list-style: none;
+  font-size: 80px;
+  /* margin-bottom: 25px; */
+  display: table;
+}
+.wrapper ul li a.clickable {
+  color: orange;
+  text-decoration: none;
+  letter-spacing: 5px;
+  text-transform: lowercase;
+  transition: 0.5s ease;
+}
+ul li a.clickable:hover {
+  letter-spacing: 15px;
+}
+
+#strengths {
+  grid-column: span 2;
+  grid-row: span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.strengths-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.strength-box {
+  border-radius: 10px;
+  padding: 24px 8px;
+  margin: 8px 0;
+  width: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.strength-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.strength-box:nth-child(1) {
+  background-color: #ffd1dc;
+}
+
+.strength-box:nth-child(2) {
+  background-color: #bdfcc9;
+}
+
+.strength-box:nth-child(3) {
+  background-color: #e0ffff;
+}
+
+.strength-box:nth-child(4) {
+  background-color: #fff5e1;
+}
+
+.strength-box:nth-child(5) {
+  background-color: #e6e6fa;
+}
+
+.strength-theme h4 {
+  font-size: 0.9em;
+  margin: 0;
+  text-align: center;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.strength-box:hover .strength-theme h4 {
+  transform: scale(1.05);
+}
+
+.strength-description {
+  margin-top: 10px;
+  font-size: 0.8em;
+  color: #333;
+  text-align: left;
+}
+
+.strength-box {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    display: flex;
+  }
+  .wrapper ul li {
+    display: flex;
+    text-align: center;
+    list-style: none;
+    font-size: 10vw;
+    /* display: table; */
+    margin-bottom: 10px;
+    align-items: center;
+    /* justify-content: center; */
+  }
+  .wrapper ul li a.clickable {
+    color: orange;
+    text-decoration: none;
+    letter-spacing: 5px;
+    text-transform: lowercase;
+    transition: 0.5s ease;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    /* align-items: center; */
+  }
+  ul li a.clickable:hover {
+    letter-spacing: 0px;
+  }
+  #home {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+  /* Other mobile-specific styles */
+  #hero {
+    grid-column: span 4;
+    height: 100%;
+    /* Other mobile-specific styles */
+  }
+
+  .studio-name {
+    margin-top: 3px;
+    font-size: 1.3em;
+    font-weight: bold;
+    /* align-self: flex-start; 가로 정렬 */
+  }
+  .hamburger {
+    margin-top: 2px;
+    height: 24px;
+    width: 20px;
+  }
+  .hamburger.open {
+    height: 24px;
+    width: 20px;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(9px) rotate(135deg);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-135deg);
+  }
+  .menu {
+    width: 50%;
+  }
+
+  #my_photo {
+    grid-column: span 4;
+    height: 100%;
+    /* Other mobile-specific styles */
+  }
+  #about {
+    grid-column: span 4;
+    grid-row: span 3;
+    font-size: 10px;
+  }
+
+  .occupation {
+    font-size: 4vw;
+  }
+  #skills {
+    grid-column: span 4;
+    grid-row: span 3;
+    /* Other mobile-specific styles */
+  }
+  #my_photo_2,
+  #contact {
+    height: 100%;
+    grid-column: span 8;
+    /* grid-row: span 2; */
+    /* Other mobile-specific styles */
+  }
+  #strengths {
+    grid-column: span 4;
+    width: calc(100% - 1rem);
+    margin: 0 0.5rem;
+    padding: 1rem;
+  }
+
+  .strengths-content {
+    width: 100%;
+  }
+
+  .strength-box {
+    width: 100%;
+  }
+
+  .strength-box:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .strength-box:active {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+}
