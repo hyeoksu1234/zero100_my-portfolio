@@ -208,7 +208,7 @@ h2 {
   grid-row: 2 / 3;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   #strength-detail {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, auto);
@@ -223,7 +223,8 @@ h2 {
 .strength-section {
   grid-column: span 4;
   border-radius: 15px;
-  padding: 1rem;
+  padding: 0.1rem;
+  padding-bottom: 0.7rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,13 +233,13 @@ h2 {
 }
 
 .strength-section h4 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin-bottom: 0.5rem;
   color: #333;
 }
 
 .strength-section p {
-  font-size: 0.9em;
+  font-size: 1em;
   color: #555;
   text-align: left;
   line-height: 1.6;
@@ -314,6 +315,8 @@ h2 {
   }
   .strength-section {
     grid-column: span 8;
+    padding: 0.1rem;
+    padding-bottom: 0.7rem;
   }
 }
 
